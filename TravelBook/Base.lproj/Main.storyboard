@@ -18,31 +18,70 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UOL-fO-vcx">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="310" width="393" height="441"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="441" id="f7A-Su-Wbx"/>
+                                </constraints>
                                 <standardMapConfiguration key="preferredConfiguration"/>
                             </mapView>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="name" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="af0-Of-rbf">
+                                <rect key="frame" x="62" y="98" width="266" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="comment" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="IeY-dd-31l">
+                                <rect key="frame" x="62" y="165" width="266" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TsB-2z-RZx">
+                                <rect key="frame" x="161" y="772" width="70" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="dWM-rv-Ogh"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save">
+                                    <color key="baseBackgroundColor" systemColor="systemTealColor"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="saveButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="dRU-nT-c3N"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="UOL-fO-vcx" secondAttribute="trailing" id="0hv-DN-lmq"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="UOL-fO-vcx" secondAttribute="bottom" id="Rk6-TY-Boc"/>
-                            <constraint firstItem="UOL-fO-vcx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="T6W-T8-f9t"/>
-                            <constraint firstItem="UOL-fO-vcx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aTq-W3-Dzk"/>
+                            <constraint firstItem="TsB-2z-RZx" firstAttribute="top" secondItem="UOL-fO-vcx" secondAttribute="bottom" constant="21" id="4o0-TJ-gxw"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TsB-2z-RZx" secondAttribute="bottom" constant="10" id="BYg-gE-Q7o"/>
+                            <constraint firstItem="af0-Of-rbf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="39" id="C38-K1-g4R"/>
+                            <constraint firstItem="UOL-fO-vcx" firstAttribute="centerX" secondItem="TsB-2z-RZx" secondAttribute="centerX" id="X2w-ZQ-z5c"/>
+                            <constraint firstItem="TsB-2z-RZx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="161" id="ZOS-UT-YCk"/>
+                            <constraint firstItem="TsB-2z-RZx" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="cxM-G1-NuN"/>
+                            <constraint firstItem="UOL-fO-vcx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="hMq-2X-0J5"/>
+                            <constraint firstItem="af0-Of-rbf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="62" id="qaU-Yx-t0p"/>
+                            <constraint firstItem="af0-Of-rbf" firstAttribute="trailing" secondItem="IeY-dd-31l" secondAttribute="trailing" id="vJ3-7z-T6F"/>
+                            <constraint firstItem="IeY-dd-31l" firstAttribute="top" secondItem="af0-Of-rbf" secondAttribute="bottom" constant="33" id="xKa-hp-Hz5"/>
+                            <constraint firstItem="af0-Of-rbf" firstAttribute="leading" secondItem="IeY-dd-31l" secondAttribute="leading" id="zGQ-Rc-I9u"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="af0-Of-rbf" secondAttribute="trailing" constant="65" id="zVj-6N-fsD"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="commentTextField" destination="IeY-dd-31l" id="OlI-0o-rrw"/>
                         <outlet property="mapView" destination="UOL-fO-vcx" id="Q3b-U9-y4L"/>
+                        <outlet property="nameTextfield" destination="af0-Of-rbf" id="PFz-kN-hTx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="28" y="5"/>
+            <point key="canvasLocation" x="26.717557251908396" y="4.9295774647887329"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.18823529411764706" green="0.69019607843137254" blue="0.7803921568627451" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
